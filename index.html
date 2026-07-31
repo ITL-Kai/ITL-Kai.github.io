@@ -30,7 +30,7 @@
     padding: 1rem;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 20;
   }
 
   nav ul {
@@ -39,7 +39,6 @@
     padding: 0;
     display: flex;
     gap: 1.5rem;
-    z-index: 15;
   }
 
   nav a {
@@ -170,69 +169,69 @@
   cursor: pointer;
 }
 
-  .steps-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-  }
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
 
-  .step {
-    background: linear-gradient(135deg, rgba(38, 32, 71, 0.6) 0%, rgba(71, 32, 53, 0.3) 100%);
-    border: 2px solid #FDF789;
-    border-radius: 12px;
-    padding: 2rem 1.5rem;
-    text-align: center;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+.step {
+  background: linear-gradient(135deg, rgba(38, 32, 71, 0.6) 0%, rgba(71, 32, 53, 0.3) 100%);
+  border: 2px solid #FDF789;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  .step:hover {
-    transform: translateY(-5px);
-    border-color: #FDF789;
-    box-shadow: 0 12px 28px rgba(253, 247, 137, 0.3);
-  }
+.step:hover {
+  transform: translateY(-5px);
+  border-color: #FDF789;
+  box-shadow: 0 12px 28px rgba(253, 247, 137, 0.3);
+}
 
-  .step-number {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, #6bbdec, #6bbdec);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin: 0 auto 1rem;
-  }
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #6bbdec, #6bbdec);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
 
-  .step h3 {
-    color: #FDF789;
-    margin: 0 0 0.75rem 0;
-    font-size: 1.2rem;
-  }
+.step h3 {
+  color: #FDF789;
+  margin: 0 0 0.75rem 0;
+  font-size: 1.2rem;
+}
 
-  .step p {
-    color: #ddd;
-    margin: 0;
-    line-height: 1.6;
-    font-size: 0.95rem;
-  }
+.step p {
+  color: #ddd;
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
 
-  header {
-    margin-left: var(--sidebar-width + 20);;
-    background-color: #2f2559;
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 2px solid #FDF789;
-  }
+header {
+  margin-left: var(--sidebar-width + 20);;
+  background-color: #2f2559;
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 2px solid #FDF789;
+}
   
-  header h1 {
-    margin-left: calc(var(--sidebar-width) + 20px);
-    font-size: 3rem;
-    color: rgb(255,255, 255);
-  }
+header h1 {
+  margin-left: calc(var(--sidebar-width) + 20px);
+  font-size: 3rem;
+  color: rgb(255,255, 255);
+}
     
 .two-column {
   display: flex;
@@ -322,6 +321,7 @@ html {
     height: 100vh;
     background: #222;
     padding-top: 20px;
+    z-index:10;
 }
 
 .sidebar a {
@@ -386,17 +386,19 @@ html {
     <li><a href="about.html">About</a></li>
   </ul>
 
-  <div class="sidebar">
+  
+  
+  
+</nav>
+
+<div class="sidebar">
     <a href="#overview">Overview</a>
     <a href="#features">Features</a>
     <a href="#heroes">Heroes</a>
     <a href="#cards">Cards</a>
     <a href="#getting-started">Contact</a>
     <a href="#section2">Contributions!</a>
-  </div>
-  
-  
-</nav>
+</div>
   
 <header>
 <h1>Portfolio</h1>
@@ -408,7 +410,7 @@ html {
         
 
   <section id="overview"> 
-    <h2>Website 0.05</h2>
+    <h2>Website 0.053</h2>
         <p style="text-align: center; color: #bbb; margin-bottom: 2rem;">
           Kill the Hero is a web-based Trading Card Game (TCG) that combines collectible
           card mechanics and strategic board-based movement. Players compete by advancing
