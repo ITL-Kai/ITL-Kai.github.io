@@ -308,6 +308,32 @@ html {
   flex: 2;
 }
 
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 220px;
+    height: 100vh;
+    background: #222;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background: #444;
+}
+
+.content {
+    margin-left: 220px;
+    padding: 30px;
+}
+
 .media-column {
   flex: 1;
 }
@@ -349,6 +375,16 @@ html {
     <li><a href="orgo.html">Organization</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
+
+  <div class="sidebar">
+      <a href="#overview">Overview</a>
+      <a href="#features">Features</a>
+      <a href="#heroes">Heroes</a>
+      <a href="#cards">Cards</a>
+      <a href="getting-started">Contact</a>
+      <a href="section2">Contributions</a>
+  </div>
+  
   
 </nav>
   
@@ -359,7 +395,7 @@ html {
 <main>
 
 <section id="overview"> 
-  <h2>Website 0.03</h2>
+  <h2>Website 0.04</h2>
       <p style="text-align: center; color: #bbb; margin-bottom: 2rem;">
         Kill the Hero is a web-based Trading Card Game (TCG) that combines collectible
         card mechanics and strategic board-based movement. Players compete by advancing
