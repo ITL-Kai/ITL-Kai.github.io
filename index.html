@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kill the Hero</title>
+  <title>Portfolio</title>
 
   <style>
 
@@ -341,12 +341,13 @@ html {
 <nav>
 
   <ul>
-    <li><a href="#overview">Overview</a></li>
+    <li><a href="index.html">Index</a></li>
     <li><a href="audio.html">Audio</a></li>
-    <li><a href="#heroes">Heroes</a></li>
-    <li><a href="#cards">Cards</a></li>
-    <li><a href="#getting-started">Getting Started</a></li>
-    <li><a href="#section2">Contributions</a></li>
+    <li><a href="video.html">Video</a></li>
+    <li><a href="written.html">Written</a></li>
+    <li><a href="web.html">Web-Based</a></li>
+    <li><a href="orgo.html">Organization</a></li>
+    <li><a href="about.html">About</a></li>
   </ul>
   
 </nav>
@@ -365,14 +366,6 @@ html {
         their hero across a shared board, playing Terrain, Equipment, and Villainy cards
         to strengthen themselves or hinder their opponent. Victory is achieved either by
         defeating the villain at the end of the board or killing the opposing hero.
-      </p>
-      <div class="screenshot-grid">
-        <img src="images/Display_Screenshot.jpg" onclick="openLightbox(this.src)" />
-        <img src="images/Screenshot_Unlock.jpg" onclick="openLightbox(this.src)" />
-        <img src="images/Default_Game_Screen.jpg" onclick="openLightbox(this.src)" />
-      </div>
-      <p style="text-align: center; color: #bbb; margin-bottom: 2rem;">
-        Click each image to get a closer look.
       </p>
 </section>
   
@@ -505,37 +498,6 @@ html {
       </p>
     </div>
     <div class="text-column">
-      <h2>Team Members:</h2>
-      <p>
-        Astha Singh,    
-        <a id="github-link" href="https://github.com/AsthaS0">
-          @Astha50
-        </a>       
-      </p>
-      <p>
-        Brian Lee,             
-        <a id="github-link" href="https://github.com/BrianL37">
-          @BrianL37 
-        </a>        
-      </p>
-      <p>
-        David Arrington,   
-        <a id="github-link" href="https://github.com/davidba2004">
-          @davidba2004  
-        </a>       
-      </p>
-      <p>
-        Joy Jaroscak, 
-        <a id="github-link" href="https://github.com/Joy-lj">
-          @Joy-lj   
-        </a> 
-      </p>
-      <p>
-        Kai Rahenkamp,          
-        <a id="github-link" href="https://github.com/ITL-Kai">
-          @ITL-KAI
-        </a>   
-      </p>
     </div>
   </div>
 </section>
@@ -546,7 +508,7 @@ html {
 <footer>
 
 <a id="github-link" href="https://github.com/SCCapstone/Firestride.git">
-Kill the Hero
+Rkmp
   
 </a>
   
@@ -572,74 +534,6 @@ Kill the Hero
       closeLightbox();
     }
   });
-
-  const cardFolder = "client/public/resources/cards/real/art/png/";
-
-  const cardImages = [
-    "abandoned-weapons-closet.png",
-    "adventurers-pack.png",
-    "ancient-maze.png",
-    "arrow.png",
-    "barren-blade.png",
-    "barrens-compound-bow.png",
-    "beach.png",
-    "bow.png",
-    "changing-plans.png",
-    "city.png",
-    "crest-of-the-ocean-knight.png",
-    "dagger.png",
-    "deep-sea-treasure.png",
-    "diversion.png",
-    "dragon-1.png","dragon-2.png","dragon-3.png","dragon-4.png",
-    "dragon-5.png","dragon-6.png","dragon-7.png","dragon-8.png",
-    "dust-cloud.png",
-    "dust-devil-1.png","dust-devil-2.png","dust-devil-3.png","dust-devil-4.png",
-    "dust-devil-5.png","dust-devil-6.png","dust-devil-7.png","dust-devil-8.png",
-    "dusted-pit.png",
-    "elevator-shaft.png",
-    "fault-line-flytrap-1.png","fault-line-flytrap-2.png","fault-line-flytrap-3.png","fault-line-flytrap-4.png",
-    "fault-line-flytrap-5.png","fault-line-flytrap-6.png","fault-line-flytrap-7.png","fault-line-flytrap-8.png",
-    "feeble-multitool.png",
-    "forests-favor.png",
-    "ghastly-specter-1.png","ghastly-specter-2.png","ghastly-specter-3.png","ghastly-specter-4.png",
-    "ghastly-specter-5.png","ghastly-specter-6.png","ghastly-specter-7.png","ghastly-specter-8.png",
-    "goggles.png",
-    "grave.png",
-    "grounded-gauntlets.png",
-    "healing-salve.png",
-    "heart-of-the-barrens.png",
-    "heart-of-the-sea.png",
-    "helm-of-the-wandering-adventurer.png",
-    "hidden-pocket.png",
-    "kloud-killer.png",
-    "map.png",
-    "mechanical-menace-1.png","mechanical-menace-2.png","mechanical-menace-3.png","mechanical-menace-4.png",
-    "mechanical-menace-5.png","mechanical-menace-6.png","mechanical-menace-7.png","mechanical-menace-8.png",
-    "metro.png",
-    "murky-water.png",
-    "nomadic-chest.png",
-    "overcast-skies.png",
-    "path.png",
-    "rope.png",
-    "sea-legion-barracks.png",
-    "sea-monster-1.png","sea-monster-2.png","sea-monster-3.png","sea-monster-4.png",
-    "sea-monster-5.png","sea-monster-6.png","sea-monster-7.png","sea-monster-8.png",
-    "sea-spear.png",
-    "seafarers-net.png",
-    "shortcut.png",
-    "sky-shuffle.png",
-    "skyfall.png",
-    "skyline.png",
-    "smog.png",
-    "surprise-attack.png",
-    "tunnel.png",
-    "undersea-current.png",
-    "underwater-labyrinth.png",
-    "unexpected-encounter.png",
-    "villainous-boon.png",
-    "warning-letter.png",
-    "wireframe-weapon.png"
-  ];
 
 const gallery = document.getElementById("card-gallery");
 
