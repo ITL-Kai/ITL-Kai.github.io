@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video</title>
+
+  <style>
+
+  footer {
+    background-color: #222;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    border-top: 2px solid #FDF789;
+  }
+    
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+  }
+
+  nav {
+    background-color: #222;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  nav a:hover {
+    color: #ff4444;
+  }
+
+  main {
+    padding: 2rem;
+  }
+
+  section {
+    margin-bottom: 4rem;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .feature-card {
+    background-color: #222;
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 4px solid #ff4444;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(255, 68, 68, 0.3);
+  }
+
+  .feature-card h3 {
+    color: #ff4444;
+    margin-top: 0;
+    font-size: 1.3rem;
+  }
+
+  .feature-card p {
+    margin: 0.5rem 0 0 0;
+    color: #ddd;
+    line-height: 1.6;
+  }
+
+  .heroes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .hero-card {
+    background: linear-gradient(135deg, rgba(71, 32, 53, 0.4) 0%, rgba(210, 179, 255, 0.15) 100%);
+    border: 2px solid rgba(253, 247, 137, 0.4);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  .hero-card:hover {
+    transform: translateY(-8px);
+    border-color: #FDF789;
+    box-shadow: 0 12px 24px rgba(253, 247, 137, 0.25);
+  }
+
+  .hero-card h3 {
+    color: #FDF789;
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .stat {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    flex: 1;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: #bbb;
+    text-transform: uppercase;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FDF789;
+    margin-top: 0.5rem;
+  }
+
+  .hero-card p {
+    color: #ddd;
+    margin: 1rem 0 0 0;
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+  scroll-behavior: smooth;
+}
+
+.horizontal-scroll img {
+  height: 200px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+  .steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .step {
+    background: linear-gradient(135deg, rgba(71, 32, 53, 0.6) 0%, rgba(71, 32, 53, 0.3) 100%);
+    border: 2px solid #FDF789;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .step:hover {
+    transform: translateY(-5px);
+    border-color: #FDF789;
+    box-shadow: 0 12px 28px rgba(253, 247, 137, 0.3);
+  }
+
+  .step-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff4444, #cc0000);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+  }
+
+  .step h3 {
+    color: #FDF789;
+    margin: 0 0 0.75rem 0;
+    font-size: 1.2rem;
+  }
+
+  .step p {
+    color: #ddd;
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  header {
+    background-color: #472035;
+    padding: 2rem;
+    text-align: left;
+    border-bottom: 2px solid #FDF789;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 3rem;
+    color: white;
+  }
+    
+.two-column {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+#github-link {
+  color: white;
+  font-weight: bold;
+}
+
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+    
+section {
+  margin-bottom: 4rem;
+  scroll-margin-top: 80px;
+}
+
+.section-intro {
+  text-align: center;
+  color: #bbb;
+  margin-bottom: 2rem;
+}
+
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.screenshot-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+    
+.screenshot-grid img.enlarged {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .screenshot-grid {
+    grid-template-columns: 1fr;
+  }
+}
+    
+html {
+  scroll-behavior: smooth;
+}
+
+.text-column {
+  flex: 2;
+}
+
+.media-column {
+  flex: 1;
+}
+
+.media-column iframe {
+  width: 100%;
+  height: 315px;
+  display: block;
+  border-radius: 10px;
+}
+
+.media-column img,
+.media-column video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+@media (max-width: 768px) {
+  .two-column {
+    flex-direction: column;
+  }
+}
+</style>
+  
+</head>
+  
+<body>
+  
+<nav>
+
+  <ul>
+    <li><a href="index.html">Index</a></li>
+    <li><a href="audio.html">Audio</a></li>
+    <li><a href="video.html">Video</a></li>
+    <li><a href="written.html">Written</a></li>
+    <li><a href="web.html">Web-Based</a></li>
+    <li><a href="orgo.html">Organization</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  
+</nav>
+  
+<header>
+<h1>Kill the Hero</h1>
+</header>
+
+<main>
+
+<section id="overview"> 
+  <h2>Website 0.01</h2>
+      <p style="text-align: center; color: #bbb; margin-bottom: 2rem;">
+        Kill the Hero is a web-based Trading Card Game (TCG) that combines collectible
+        card mechanics and strategic board-based movement. Players compete by advancing
+        their hero across a shared board, playing Terrain, Equipment, and Villainy cards
+        to strengthen themselves or hinder their opponent. Victory is achieved either by
+        defeating the villain at the end of the board or killing the opposing hero.
+      </p>
+</section>
+  
+<section id="features">
+  <h2>Features</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <h3>Strategic Board Movement</h3>
+      <p>Advance your hero across a shared board, making tactical decisions about movement and positioning to outmaneuver your opponent.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Diverse Card Types</h3>
+      <p>Deploy powerful Terrain, Equipment, and Villainy cards to strengthen your hero or hinder your opponent's progress.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Collectible Cards</h3>
+      <p>Build and customize your deck from a vast collection of cards, each with unique abilities and strategic value.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Multiple Victory Paths</h3>
+      <p>Defeat the villain at the end of the board or eliminate your opponent's hero. Choose your own path to victory.</p>
+    </div>
+    <div class="feature-card">
+      <h3>PvP Gameplay</h3>
+      <p>Compete against players worldwide in real-time matches with dynamic, strategic card battles.</p>
+    </div>
+  </div>
+</section>
+
+<section id="heroes">
+  <h2>Choose Your Hero</h2>
+  <p style="text-align: center; color: #bbb; margin-bottom: 2rem;">Each hero brings unique strengths and abilities to the battlefield</p>
+  <div class="heroes-grid">
+    <div class="hero-card">
+      <h3>Riptide</h3>
+      <p style="font-size: 0.9rem; color: #FDF789; margin-bottom: 1rem;">Deep Sea Hero</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-label">Health</div>
+          <div class="stat-value">3</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Strength</div>
+          <div class="stat-value">3</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Speed</div>
+          <div class="stat-value">1</div>
+        </div>
+      </div>
+      <p>Hero of the ocean, Riptide is strong but slow.</p>
+    </div>
+    <div class="hero-card">
+      <h3>Elpis</h3>
+      <p style="font-size: 0.9rem; color: #FDF789; margin-bottom: 1rem;">Great Barrens Hero</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-label">Health</div>
+          <div class="stat-value">3</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Strength</div>
+          <div class="stat-value">1</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Speed</div>
+          <div class="stat-value">2</div>
+        </div>
+      </div>
+      <p>A swift desert warrior with balanced abilities.</p>
+    </div>
+  </div>
+</section>
+
+<section id="cards">
+    <h2>Cards</h2>
+    <p style="text-align: center; color: #bbb; margin-bottom: 2rem;">Scroll through the catelogue of implemented cards</p>
+    <div class="horizontal-scroll" id="card-gallery">
+    </div>
+</section>
+
+<section id="getting-started">
+  <h2>Getting Started</h2>
+  <p style="text-align: center; color: #bbb; margin-bottom: 2rem;">Jump into the action in just a few simple steps</p>
+  <div class="steps-container">
+    <div class="step">
+      <div class="step-number">1</div>
+      <h3>Create Account</h3>
+      <p>Sign up with your email or choose a username to get started. Your account keeps your progress safe.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <h3>Select Your Hero</h3>
+      <p>Choose from unique heroes like Riptide or Elpis. Your hero determines your starter deck and special abilities.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <h3>Build Your Deck</h3>
+      <p>Customize your deck with cards from your collection. Add Terrain, Equipment, and Villainy cards to your strategy.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">4</div>
+      <h3>Enter Battle</h3>
+      <p>Face off against opponents in real-time PvP matches. Prove your tactical skills and earn rewards!</p>
+    </div>
+  </div>
+</section>
+  
+<section id="section2"> 
+  <h2> Contributions </h2>
+      <p style="text-align: center; color: #bbb; margin-bottom: 2rem;">
+        Kill the Hero receives sparce updates. The github repository is located 
+        <a id="github-link" href="https://github.com/SCCapstone/Firestride.git">
+        here</a>
+         and also below in the website's footer. 
+      </p>
+  <div class="two-column">
+    <div class="media-column">
+      <iframe 
+        src="https://www.youtube.com/embed/kdFXvC58Kts" 
+        title="Temp Video" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+
+      <p>
+        Above is the Kill the Hero Final Demo Video. 
+      </p>
+    </div>
+    <div class="text-column">
+    </div>
+  </div>
+</section>
+
+
+</main>
+  
+<footer>
+
+<a id="github-link" href="https://github.com/SCCapstone/Firestride.git">
+Rkmp
+  
+</a>
+  
+</footer>
+
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="">
+</div>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = src;
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+    document.getElementById("lightbox-img").src = "";
+  }
+
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+      closeLightbox();
+    }
+  });
+
+const gallery = document.getElementById("card-gallery");
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+shuffleArray(cardImages);
+
+cardImages.forEach(name => {
+  const img = document.createElement("img");
+  img.src = cardFolder + name;
+  img.onclick = () => openLightbox(img.src);
+  gallery.appendChild(img);
+});
+  
+</script>
+
+</body>
+</html>
+  
