@@ -7,6 +7,10 @@
 
   <style>
 
+  :root {
+    --sidebar-width: 180px;
+  }
+
   footer {
     background-color: #222;
     padding: 1.5rem 2rem;
@@ -223,7 +227,7 @@
   }
   
   header h1 {
-    margin: 0;
+    margin: var(--sidebar-width + 20);;
     font-size: 3rem;
     color: white;
   }
@@ -312,7 +316,7 @@ html {
     position: fixed;
     left: 0;
     top: 100;
-    width: 220px;
+    width: var(--sidebar-width);
     height: 100vh;
     background: #222;
     padding-top: 20px;
@@ -326,7 +330,7 @@ html {
 }
 
 .main-content {
-    margin-left: 240px;
+    margin-left: var(--sidebar-width);
 }
 
 .sidebar a:hover {
